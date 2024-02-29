@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: api
+  profiles:
+    active: gate
+
+server:
+  port: 18999
+
+## 账号配置
+gate:
+  config:
+    secret: ""
+    key: ""

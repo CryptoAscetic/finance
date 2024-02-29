@@ -1,0 +1,55 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+nbactions.xml
+
+### VS Code ###
+.vscode/
+/nbactions.xml
+/nbproject/
+
+### Eclipse、STS ###
+.project
+.classpath
+.settings/
+.apt_generated
+.classpath
+.factorypath
+.springBeans
+.sts4-cache
+ 
+### maven ###
+target/
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+.factorypath
+out/
+ 
+### Gradel ###
+.gradle/
+build/
+ 
+### temp ignore ###
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
