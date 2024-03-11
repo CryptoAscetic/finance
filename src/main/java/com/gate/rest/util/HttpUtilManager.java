@@ -129,7 +129,38 @@ public class HttpUtilManager {
 		}
 		return responseData;
 	}
-	
+
+	public String HttpGet(String url_prex, String url, String param, Header header) throws HttpException, IOException {
+
+		IdleConnectionMonitor();
+		url = url_prex + url;
+		if (param != null && !param.equals("")) {
+			if (url.endsWith("?")) {
+				url = url + param;
+			} else {
+				url = url + "?" + param;
+			}
+		}
+		HttpRequestBase method = this.httpGetMethod(url);
+		method.setConfig(requestConfig);
+		method.setHeader(header);
+		HttpResponse response = client.execute(method);
+		HttpEntity entity = response.getEntity();
+		if (entity == null) {
+			return "";
+		}
+		InputStream is = null;
+		String responseData = "";
+		try {
+			is = entity.getContent();
+			responseData = IOUtils.toString(is, "UTF-8");
+		} finally {
+			if (is != null) {
+				is.close();
+			}
+		}
+		return responseData;
+	}
 	public String requestHttpPost(String url_prex,String url,Map<String,String> params) throws HttpException, IOException{
 		
 		IdleConnectionMonitor();
